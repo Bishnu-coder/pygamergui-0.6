@@ -23,9 +23,6 @@ Install module
   pip install pygame,pygamergui
 ```
 
-## Badges
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
 
 ## Demo Image
 ![image](https://github.com/Bishnu-coder/pygamergui-0.6/blob/main/tests/Screenshot_2023-06-28_16_13_11.png?raw=true)
@@ -107,4 +104,5 @@ Important points:
 
 4. All the show methods should be put in an function which is passed as target to window class
 
-
+## Badges
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
