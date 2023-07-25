@@ -1,8 +1,14 @@
 # importing needed modules
 from rich.console import Console
 import pygame
+# ------------------------
 
+# printing the message
 cons = Console()
+cons.print("[green]Hello from pygamer [red] Thank for using my module[/red] [/green]")
+cons.print("[green]if you like it [red] do support it by suscribing my youtube channel [/red] [/green]")
+cons.print("[green]Youtube:->[red]https://www.youtube.com/channel/UCNj9jZBVxRWm7TA5g2K7XtA [/red] [/green]")
+# ----------------------
 
 
 # ------------------------------
@@ -24,28 +30,41 @@ class app():
         self.colock = pygame.time.Clock()
         self.eve = None
         self.fps = update_rate
+        self.fps1=self.fps
 
         self.background = background
-
+        self.bgimg=None
+    
+    def set_fps(self,fps,state):
+        if state:
+            self.fps=fps
+        else:
+            self.fps=self.fps1
     def run(self):
         pygame.display.set_caption(self.title)
         cons.print("[green]sucessfully ran the app[/green]")
+        self.bgimg=None
         try:
             if self.background is not None:
-                bgimg = pygame.image.load(f'{self.background}')
+                self.bgimg = pygame.image.load(f'{self.background}')
         except Exception :
             raise Exception(f"Image {self.background} Not found please enter correct name of image")
         while True:
             self.scren.fill(self.bgcolor)
-            self.scren.blit(bgimg, (0, 0))
+
             for eve in pygame.event.get():
                 self.eve = eve
                 if eve.type == pygame.QUIT:
                     exit()
+            if self.bgimg is not None:
+                self.scren.blit(self.bgimg, (0, 0))
             if self.target is not None:
                 self.target()
+            if self.fps > 10:
+                print('yes')
             pygame.display.update()
             self.colock.tick(self.fps)
+            
 
 
 # ---------------------
