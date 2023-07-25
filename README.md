@@ -25,7 +25,7 @@ Install module
 
 
 ## Demo Image
-![image](https://github.com/Bishnu-coder/pygamergui-0.6/blob/main/tests/Screenshot_2023-06-28_16_13_11.png?raw=true)
+![video](https://github.com/Bishnu-coder/pygamergui-0.6/blob/main/tests/Demo.mp4?raw=true)
 
 ## Demo code 
 ```bash
