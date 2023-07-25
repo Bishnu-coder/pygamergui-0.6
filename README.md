@@ -24,26 +24,29 @@ Install module
 ```
 
 
-## Demo Image
-![video](https://github.com/Bishnu-coder/pygamergui-0.6/blob/main/tests/Demo.mp4?)
+## Demo Video
+![video](https://github.com/Bishnu-coder/pygamergui-0.6/blob/main/tests/Untitled%20video%20-%20Made%20with%20Clipchamp.gif)
+
+## Demo image
+![image](https://github.com/Bishnu-coder/pygamergui-0.6/blob/main/tests/Screenshot_2023-06-28_16_13_11.png)
 
 ## Demo code 
-```bash
-import tools, window
-from rich import print
+```python
+from pygamergui import buttons,slider,text,window
 
 
 def b1test(args):
-    t1.text = "use"
+    t1.text = "use->"
     print(args)
 
 
 def b2test(args):
-    t1.text = "hello"
+    t1.text = "Pygamergui"
     print(args)
 
+anemi = text.Word_Animation("pygamergui",color='red')
 
-b1 = tools.simple_button(target=b1test,
+b1 = buttons.simple_button(target=b1test,
                          text='use',
                          fg='white',
                          w=75,
@@ -52,25 +55,27 @@ b1 = tools.simple_button(target=b1test,
                          args=[1]
                          )
 
-b2 = tools.simple_button(target=b2test,
+b2 = buttons.simple_button(target=b2test,
                          fg='white',
-                         text="hello",
+                         text="PGG",
                          w=100,
                          h=50,
                          color=(0, 175, 250)
                          )
 
-t1 = tools.text("what to use??")
+t1 = text.text("what to use??")
 
-r1 = tools.button_radio(radius=30, color='cyan')
+r1 = buttons.button_radio(radius=30, color='cyan')
 
-s1 = tools.slider(300,
+s1 = slider.slider(300,
                   550,
                   h=10,
                   corner_round=10,
                   color='purple',
                   t1_align='side',
                   text_size=20,
+                  text_color='black',
+                  color_circle=(0, 175, 250)
                   )
 
 
@@ -80,23 +85,28 @@ def update():
 
     t1.show(windowm, 175, 175)
 
-    r1.show(windowm, 300, 300)
-
+    a=r1.show(windowm, 300, 300)
+    if a:
+        anemi.show(windowm,180,100,4)
     a = s1.show(windowm)
+    
 
-
-windowm = window.app(title='test', bgcolor=(40, 40, 40), target=update, update_rate=10, background="python1.png")
+windowm = window.app(title='test',
+                    bgcolor=(40, 40, 40), 
+                    target=update, update_rate=10, 
+                    background="python1.png"
+                    )
 windowm.run()
 
 ```
 
 ## Project structure
-![structure](https://github.com/Bishnu-coder/pygamergui-0.6/blob/main/tests/diagram-export-6_28_2023,%203_39_48%20PM.png?raw=true)
+![structure](https://raw.githubusercontent.com/Bishnu-coder/pygamergui-0.6/a575318116fe23d22ecee5f0982ab9e590e777ba/tests/diagram-export-7_25_2023%2C%2010_56_49%20AM.svg)
 ## Appendix
 
 Important points:
 
-1. all widgets (i.e button,text,slider,Button_radio)can be used importing tools
+1. all widgets (i.e button,text,slider,Button_radio)can be used importing text,buttons,slider from pygamergui.
 
 2. background image path should be provided to window class as in example
 
